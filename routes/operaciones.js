@@ -24,12 +24,17 @@ router.get('/mult', (req, res) => {
     });
 });
 
-router.post('/ejemplopost', (req, res) => {
+router.post('/factorial', (req, res) => {
 
-    let midato = req.body.dato;
+    let numero = req.body.numero;
+    let factorial = 1;
+    for (let i = 2; i <= numero; i++) {
+        factorial = factorial * i;
+    }
 
     res.json({
-        status: 'Ok'
+        status: 'Ok',
+        resultado: factorial
     });
 
 });
