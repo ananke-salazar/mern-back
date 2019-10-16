@@ -18,8 +18,8 @@ app.use(bodyParser.json());
 //app.use(require('method-override')());
 app.use(express.static(__dirname + '/public'));
 
-//ESTE CÓDIGO SÍ ES MÍO
-app.use('/api/operaciones',require('./routes/operaciones.js'));
+//Challenge
+app.use('/challenge',require('./routes/challenge.js'));
 
 
 // finally, let's start our server...
