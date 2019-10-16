@@ -24,4 +24,16 @@ router.get('/mult', (req, res) => {
     });
 });
 
+router.post('/ejemplopost', (req, res) => {
+
+    let midato = req.body.dato;
+
+    res.json({
+        status: 'Ok'
+    });
+
+});
+
+
+
 module.exports = router;
