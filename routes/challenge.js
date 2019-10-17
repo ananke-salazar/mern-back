@@ -653,6 +653,16 @@ var Nodos = [
 
 var router = require('express').Router();
 
+router.get('/', async (req, res) => {
+
+    res.json({
+        status: 'ok'
+    });
+
+});
+
+
+//NARDA
 router.post('/valorPositivo', async (req, res) => {
     let num = req.body.num;
     if (num < 0){
@@ -667,6 +677,19 @@ router.post('/valorPositivo', async (req, res) => {
     res.json({
         status: 'ok',
         numeroPositivo: num
+    });
+
+});
+
+
+//NARDA
+
+router.get('/nodos', async (req, res) => {
+
+    
+    res.json({
+        status: 'ok',
+        traer : Nodos
     });
 
 });
