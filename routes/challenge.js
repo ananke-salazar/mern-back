@@ -661,4 +661,24 @@ router.get('/', async (req, res) => {
 
 });
 
+var router = require('express').Router();
+
+router.post('/valorPositivo', async (req, res) => {
+    let num = req.body.num;
+    if (num < 0){
+        num= num * -1;
+        if (num >= 0) {
+            num = num * 1;
+        }
+
+    };
+
+
+    res.json({
+        status: 'ok',
+        numeroPositivo: num
+    });
+
+});
+
 module.exports = router;
