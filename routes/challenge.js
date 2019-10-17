@@ -665,8 +665,8 @@ router.get('/', async (req, res) => {
 //NARDA
 router.post('/valorPositivo', async (req, res) => {
     let num = req.body.num;
-    if (num < 0){
-        num= num * -1;
+    if (num < 0) {
+        num = num * -1;
         if (num >= 0) {
             num = num * 1;
         }
@@ -683,13 +683,12 @@ router.post('/valorPositivo', async (req, res) => {
 
 
 //NARDA
-
 router.get('/nodos', async (req, res) => {
 
-    
+
     res.json({
         status: 'ok',
-        traer : Nodos
+        traer: Nodos
     });
 
 });
@@ -699,30 +698,46 @@ var contador = 0;
 router.get('/fechaActual', async (req, res) => {
 
 
-if (contador >= 0 ){
-    contador = contador + 1 ;
-}
-    
-    
+    if (contador >= 0) {
+        contador = contador + 1;
+    }
+
+
     res.json({
         status: 'ok',
-        traer : new Date(),
-        Contadors : contador
+        traer: new Date(),
+        Contadors: contador
     });
 
 });
 
+//Salazar 
+router.post('/obtenerNodoSegunID', async (req, res) => {
 
+    let NodoDestino = {};
+
+    for (let i = 0; i < Nodos.length; i++) {
+        if (Nodos[i]._id === req.body._id) {
+            NodoDestino = Nodos[i];
+            break;
+        }
+    }
+
+    res.json({
+        Target: NodoDestino
+    });
+
+})
 
 router.post('/multiplo', async (req, res) => {
 
     let numero = req.body.numero;
     numero = numero / 3;
-    
-    
+
+
     res.json({
         status: 'ok',
-        mostrar : Math.floor(numero)
+        mostrar: Math.floor(numero)
     });
 
 });
