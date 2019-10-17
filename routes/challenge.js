@@ -653,12 +653,16 @@ var Nodos = [
 
 var router = require('express').Router();
 
-router.get('/', async (req, res) => {
+router.get('/positivo', async (req, res) => {
 
+    let numero = req.body.numero;
+    Resultado = numero*-1 ;
     res.json({
-        status: 'ok'
+        status: 'ok',
+        Resultado: Resultado
     });
 
 });
+
 
 module.exports = router;
