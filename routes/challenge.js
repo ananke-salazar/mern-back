@@ -694,4 +694,22 @@ router.get('/nodos', async (req, res) => {
 
 });
 
+//Edwards
+var contador = 0;
+router.get('/fechaActual', async (req, res) => {
+
+
+if (contador >= 0 ){
+    contador = contador + 1 ;
+}
+    
+    
+    res.json({
+        status: 'ok',
+        traer : new Date(),
+        Contadors : contador
+    });
+
+});
+
 module.exports = router;
