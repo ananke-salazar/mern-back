@@ -653,10 +653,13 @@ var Nodos = [
 
 var router = require('express').Router();
 
-router.get('/positivo', async (req, res) => {
+router.post('/positivo', async (req, res) => {
 
     let numero = req.body.numero;
-    Resultado = numero*-1 ;
+    if (numero <= 1){
+        Resultado = numero * -1 ;
+    }
+    
     res.json({
         status: 'ok',
         Resultado: Resultado
