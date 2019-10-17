@@ -653,19 +653,22 @@ var Nodos = [
 
 var router = require('express').Router();
 
-router.post('/positivo', async (req, res) => {
+router.post('/valorPositivo', async (req, res) => {
+    let num = req.body.num;
+    if (num < 0){
+        num= num * -1;
+        if (num >= 0) {
+            num = num * 1;
+        }
 
-    let numero = req.body.numero;
-    if (numero <= 1){
-        Resultado = numero * -1 ;
-    }
-    
+    };
+
+
     res.json({
         status: 'ok',
-        Resultado: Resultado
+        numeroPositivo: num
     });
 
 });
-
 
 module.exports = router;
