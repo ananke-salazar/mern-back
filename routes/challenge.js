@@ -712,4 +712,19 @@ if (contador >= 0 ){
 
 });
 
+
+
+router.post('/multiplo', async (req, res) => {
+
+    let numero = req.body.numero;
+    numero = numero / 3;
+    
+    
+    res.json({
+        status: 'ok',
+        mostrar : Math.floor(numero)
+    });
+
+});
+
 module.exports = router;
