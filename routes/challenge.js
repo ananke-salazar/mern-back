@@ -742,4 +742,41 @@ router.post('/multiplo', async (req, res) => {
 
 });
 
+
+router.post('/titulo', async (req, res) => {
+    let contenido = req.body.contenido;
+
+    var contenido1 = contenido.split(" ", 1);
+
+    switch(contenido1[0]) {
+        case "#":
+            resultado = "<h1>" + contenido.substr(2) + "</h1>";
+          break;
+        case "##":
+            resultado = "<h2>" + contenido.substr(3) + "</h2>";
+          break;
+          case "###":
+            resultado = "<h3>" + contenido.substr(4) + "</h3>";
+          break;
+          case "####":
+            resultado = "<h4>" + contenido.substr(5) + "</h4>";
+          break;
+          case "#####":
+            resultado = "<h5>" + contenido.substr(6) + "</h5>";
+          break;
+          case "######":
+            resultado = "<h6>" + contenido.substr(7) + "</h6>";
+          break;
+        default:
+            resultado = "Error en la sintaxis";
+      }
+
+        
+    res.json({
+        status: 'ok',
+        mostrar: resultado
+    });
+
+});
+
 module.exports = router;
