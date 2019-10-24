@@ -744,8 +744,8 @@ router.post('/multiplo', async (req, res) => {
 
 
 router.post('/titulo', async (req, res) => {
-    let contenido = req.body.contenido;
 
+    let contenido = req.body.contenido;
     var contenido1 = contenido.split(" ", 1);
 
     switch(contenido1[0]) {
